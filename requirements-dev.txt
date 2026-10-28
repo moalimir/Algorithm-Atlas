@@ -1,0 +1,4 @@
+# Optional: needed only to regenerate mathematical figure exports.
+# Use Python 3.13. Site reading and verification need no pip packages.
+matplotlib==3.10.8
+numpy==2.3.4
