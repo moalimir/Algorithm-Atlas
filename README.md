@@ -2,7 +2,7 @@
 
 Visual, interactive tutorials for data structures, algorithms, and complexity analysis, with optional AI and machine learning paths.
 
-**[Start learning →](https://moalimir.github.io/Algorithm-Atlas/)** · [Contribute](CONTRIBUTING.md) · [Maintenance guide](docs/maintenance.md)
+### [Start learning →](https://moalimir.github.io/Algorithm-Atlas/)
 
 ![Algorithm Atlas learning map](assets/algorithm-atlas-preview.png)
 
