@@ -17,6 +17,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.13'
+          cache: pip
       - uses: actions/setup-node@v6
         with:
           node-version: '24'
@@ -28,6 +29,13 @@ jobs:
         run: python3 scripts/build_site.py
       - name: Verify the complete contributor archive
         run: python3 scripts/build_standalone.py
+      - name: Install optional figure authoring dependencies
+        run: python3 -m pip install -r requirements-dev.txt
+      - name: Verify figure regeneration in the temporary contributor copy
+        working-directory: dist/algorithm-atlas
+        run: |
+          python3 scripts/generate_precision_figures.py
+          python3 scripts/check_complexity.py
       - name: Upload the website
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4

@@ -55,7 +55,7 @@ These checks are focused regression evidence, not a full audit of all 82 algorit
 
 The public entry point is <https://moalimir.github.io/Algorithm-Atlas/>.
 
-`.github/workflows/pages.yml` runs the checks on pull requests and pushes to `main`. It builds `dist/site/` with `scripts/build_site.py`. Deployment runs only after successful checks on `main`, using the `github-pages` environment and GitHub's Pages artifact actions. PRs validate and stage the site but do not deploy.
+`.github/workflows/pages.yml` runs the checks on pull requests and pushes to `main`. It builds `dist/site/` with `scripts/build_site.py`. Deployment runs only after successful checks on `main`, using the `github-pages` environment and GitHub's Pages artifact actions. PRs validate and stage the site but do not deploy. CI also installs the pinned optional plotting dependencies and regenerates figures in the temporary contributor copy, then checks their mathematical coordinates; approved source exports are left untouched.
 
 The repository's Pages source must be **GitHub Actions**. Deployment uses relative URLs so the `/Algorithm-Atlas/` project prefix is preserved. In the repository's Actions tab, inspect the latest **Check and publish** run to diagnose a failed check or deployment. A merged revert to a known good commit triggers a new deployment.
 
